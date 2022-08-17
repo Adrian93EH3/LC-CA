@@ -1,0 +1,33 @@
+<main class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <form enctype="application/x-www-form-urlencoded" role="form" novalidate>
+      <!-- input has a lot of events that can be used with it. keydown.enter is an event that detects and enters changes made by the user.
+      The data that the user inputs is stored into the '$event' and this is by default being done by HTML's input. -->
+      <input class="new-todo" placeholder="What needs to be done" (keydown.enter)="onKeyDownEvent($event)" autofocus>
+    </form>
+  </header>
+  <section class="main">
+    <div *ngFor = "let item of todoItem"> {{item}} </div>
+    <app-complete-all></app-complete-all>
+    <app-todos-list></app-todos-list>
+  </section>
+  <footer class="footer">
+    <span class="todo-count"></span>
+    <ul class="filters">
+      <li>
+        <a href="#" class="selected">All</a>
+      </li>
+      <li>
+        <a href="#">Active</a>
+      </li>
+      <li>
+        <a href="#" >Completed</a>
+      </li>
+    </ul>
+    <button class="clear-completed">Clear completed</button>
+  </footer>
+</main>
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+</footer>
